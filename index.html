@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portafolio de Camilo Díaz, estudiante de programación y desarrollador web en formación."
+  />
+  <title>Camilo Díaz | Portafolio de desarrollo web</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span>Camilo Díaz</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a class="nav-cta" href="#contacto">
+        Hablemos <span>↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="hero section" id="inicio">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Estudiante de programación · Santiago, Chile
+        </p>
+
+        <h1>
+          Ideas que se convierten en
+          <em>software.</em>
+        </h1>
+
+        <p class="hero-intro">
+          Soy un programador certificado Full stack-python, me gusta el hecho de crear
+          de proyectos y hacerlos funcionales.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#proyectos">
+            Ver proyectos <span>↓</span>
+          </a>
+
+          <a class="text-link" href="#contacto">
+            Contactarme <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="hero-art reveal"
+        aria-label="Panel visual de código"
+        role="img"
+      >
+        <div class="art-sticker sticker-top">
+          BUILD<br />
+          WITH INTENT
+        </div>
+
+        <div class="code-window">
+          <div class="window-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <small>portfolio.js</small>
+          </div>
+
+          <pre><code><i>const</i> <b>developer</b> = {
+  name: <mark>'Camilo'</mark>,
+  focus: [
+    <mark>'producto'</mark>,
+    <mark>'experiencias'</mark>
+  ],
+  status: <strong>true</strong>
+};
+
+<span class="comment">// haz que cuente</span>
+launch(developer);</code></pre>
+        </div>
+
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+
+        <div class="art-sticker sticker-bottom">
+          CRAFT<br />
+          NOT CLUTTER
+        </div>
+      </div>
+    </section>
+
+    <!-- CINTA DE ESPECIALIDADES -->
+    <div class="ticker" aria-label="Especialidades">
+      <div class="ticker-track">
+        <span>FRONTEND</span>
+        <b>✳</b>
+        <span>BACKEND</span>
+        <b>✳</b>
+        <span>PRODUCTO DIGITAL</span>
+        <b>✳</b>
+        <span>OPEN SOURCE</span>
+        <b>✳</b>
+
+        <span>FRONTEND</span>
+        <b>✳</b>
+        <span>BACKEND</span>
+        <b>✳</b>
+        <span>PRODUCTO DIGITAL</span>
+        <b>✳</b>
+        <span>OPEN SOURCE</span>
+        <b>✳</b>
+      </div>
+    </div>
+
+    <!-- SOBRE MÍ -->
+    <section class="section about" id="sobre-mi">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / contexto</p>
+
+        <h2>
+          No solo escribo código.
+          <br />
+          <span>Diseño posibilidades.</span>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lead">
+            Soy estudiante de Programación y me gusta transformar 
+            ideas en proyectos reales. Disfruto crear, experimentar
+             y buscar soluciones a problemas cotidianos. Cada proyecto
+              me permite aprender algo nuevo, mejorar mis habilidades
+             y descubrir hasta dónde puedo llegar con la tecnología.
+          </p>
+
+          <p>
+            He trabajado con tecnologías como Python, Flask, HTML, 
+            CSS, JavaScript y MySQL, desarrollando proyectos tanto
+             individuales como en equipo. Me gusta colaborar, compartir 
+             ideas y aprender de otras personas
+             para crear soluciones cada vez mejores.
+          </p>
+
+          <a class="text-link" href="#contacto">
+            Conocer más sobre mí <span>↗</span>
+          </a>
+        </div>
+
+        <div class="principles reveal">
+          <div class="principle">
+            <span class="principle-number">01</span>
+
+            <div>
+              <h3>Claridad</h3>
+              <p>
+                Interfaces que explican lo complejo sin hacerlo pesado.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle">
+            <span class="principle-number">02</span>
+
+            <div>
+              <h3>Curiosidad</h3>
+              <p>
+                Preguntas mejores antes de escribir soluciones.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle">
+            <span class="principle-number">03</span>
+
+            <div>
+              <h3>Criterio</h3>
+              <p>
+                Decisiones técnicas conectadas con objetivos reales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK TECNOLÓGICO -->
+    <section class="section stack-section" id="stack">
+      <div class="section-heading split-heading reveal">
+        <div>
+          <p class="eyebrow">02 / herramientas</p>
+
+          <h2>
+            Mi caja
+            <br />
+            <span>de herramientas.</span>
+          </h2>
+        </div>
+
+        <p class="heading-note">
+          Tecnologías que he utilizado en proyectos y actividades de formación.
+        </p>
+      </div>
+
+      <div class="stack-grid">
+        <article class="stack-card stack-card-large reveal">
+          <span class="card-index">01</span>
+          <span class="stack-icon">◒</span>
+
+          <h3>Frontend</h3>
+
+          <p>
+            Construcción de interfaces rápidas, accesibles y con personalidad.
+          </p>
+
+          <div class="tag-list">
+            <span>HTML / CSS</span>
+            <span>JavaScript</span>
+            <span>Bootstrap</span>
+          </div>
+        </article>
+
+        <article class="stack-card reveal">
+          <span class="card-index">02</span>
+          <span class="stack-icon">⌘</span>
+
+          <h3>Backend</h3>
+
+          <p>
+            APIs, lógica y datos que sostienen el producto.
+          </p>
+
+          <div class="tag-list">
+            <span>Flask</span>
+            <span>Python</span>
+            <span>SQL</span>
+          </div>
+        </article>
+
+        <article class="stack-card accent-card reveal">
+          <span class="card-index">03</span>
+          <span class="stack-icon">✦</span>
+
+          <h3>Base de datos</h3>
+
+          <p>
+            Organización y gestión de datos con MySQL y SQL.
+          </p>
+
+          <div class="tag-list">
+            <span>MySQL</span>
+            <span>SQL</span>
+          </div>
+        </article>
+
+        <article class="stack-card reveal">
+          <span class="card-index">04</span>
+          <span class="stack-icon">↯</span>
+
+          <h3>Herramientas y tecnologías</h3>
+
+          <p>
+            Control de versiones y herramientas para 
+            desarrollar proyectos con GitHub.
+          </p>
+
+          <div class="tag-list">
+            <span>GitHub</span>
+            <span>Bootstrap</span>
+            <span>Visual Studio Code</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section projects-section" id="proyectos">
+      <div class="section-heading split-heading reveal">
+        <div>
+          <p class="eyebrow">03 / trabajo seleccionado</p>
+
+          <h2>
+            Proyectos con
+            <br />
+            <span>algo que decir.</span>
+          </h2>
+        </div>
+
+        <a class="text-link heading-link" href="#contacto">
+          ¿Tienes una idea? <span>↗</span>
+        </a>
+      </div>
+
+      <p class="projects-note">Las imágenes de las tarjetas son mockups conceptuales para presentar visualmente cada proyecto; visita los enlaces para ver las versiones publicadas.</p>
+      <div class="projects-list">
+        <!-- PROYECTO 1 -->
+        <article class="project-card project-coral reveal">
+          <div class="project-visual project-image">
+            <img src="images/posturelab-mockup.png" 
+            alt="Mockup conceptual de PostureLab en una pantalla de computador" loading="lazy" />
+          </div>
+
+          <div class="project-info">
+            <div class="project-meta">
+              <span>Proyecto 01</span>
+              <span>2026</span>
+            </div>
+
+            <h3>PostureLab</h3>
+
+            <p>
+              Proyecto de apoyo a la postura que busca mostrar visualmente cuándo una postura es correcta o necesita mejorar.
+            </p>
+
+            <div class="tag-list">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link project-live" href="https://posturelab-proyecto2.onrender.com/" target="_blank" rel="noopener noreferrer">
+              Ver en línea <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 2 -->
+        <article class="project-card project-lime reveal">
+          <div class="project-visual project-image">
+            <img src="images/mimetodo-mockup.png" alt="Mockup conceptual de MiMetodo en computador y teléfono" loading="lazy" />
+          </div>
+
+          <div class="project-info">
+            <div class="project-meta">
+              <span>Proyecto 02</span>
+              <span>2026</span>
+            </div>
+
+            <h3>Mimetodo</h3>
+
+            <p>
+              Plataforma web informativa que busca entregar orientación clara sobre métodos anticonceptivos.
+            </p>
+
+            <div class="tag-list">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>Bootstrap</span>
+            </div>
+            <a class="project-link project-live" href="https://mimetodo.onrender.com/" target="_blank" rel="noopener noreferrer">
+              Ver en línea <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 3 -->
+        <article class="project-card project-lilac reveal">
+          <div class="project-visual project-image">
+            <img src="images/academymap-mockup.png" 
+            alt="Mockup conceptual de AcademyMap en computador y teléfono" loading="lazy" />
+          </div>
+
+          <div class="project-info">
+            <div class="project-meta">
+              <span>Proyecto 03</span>
+              <span>2026</span>
+            </div>
+
+            <h3>AcademyMap</h3>
+
+            <p>
+              Plataforma que ayuda a estudiantes de 8° básico a conocer liceos técnico-profesionales
+               y elegir especialidades según sus intereses.
+            </p>
+
+            <div class="tag-list">
+              <span>Python</span>
+              <span>HTML / CSS</span>
+              <span>MySQL</span>
+            </div>
+            <a class="project-link project-live" href="https://academymap-8s8i.onrender.com" target="_blank" rel="noopener noreferrer">
+              Ver en línea <span>↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section process-section" id="proceso">
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 / cómo trabajo</p>
+
+        <h2>
+          Del caos al
+          <br />
+          <span>“ya funciona”.</span>
+        </h2>
+      </div>
+
+      <div class="process-list">
+        <div class="process-step reveal">
+          <span>01</span>
+
+          <div>
+            <h3>Entender</h3>
+            <p>
+              Contexto, personas, restricciones y la pregunta correcta.
+            </p>
+          </div>
+
+          <b>↘</b>
+        </div>
+
+        <div class="process-step reveal">
+          <span>02</span>
+
+          <div>
+            <h3>Explorar</h3>
+            <p>
+              Alternativas, prototipos y decisiones que podamos defender.
+            </p>
+          </div>
+
+          <b>↘</b>
+        </div>
+
+        <div class="process-step reveal">
+          <span>03</span>
+
+          <div>
+            <h3>Construir</h3>
+            <p>
+              Código legible, iteraciones cortas y feedback temprano.
+            </p>
+          </div>
+
+          <b>↘</b>
+        </div>
+
+        <div class="process-step reveal">
+          <span>04</span>
+
+          <div>
+            <h3>Mejorar</h3>
+            <p>
+              Medir, aprender y dejar el producto más fuerte que antes.
+            </p>
+          </div>
+
+          <b>↗</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-inner reveal">
+        <p class="eyebrow">05 / siguiente paso</p>
+
+        <h2>
+          ¿Construimos
+          algo interesante?
+        </h2>
+
+        <p>
+          ¿Tienes una idea o un proyecto en mente? Me gustaría conocerla, aportar mis conocimientos y seguir creando soluciones. ¡Escríbeme y conversemos!
+        </p>
+
+        <a class="contact-email" href="mailto:camilodiaz2860@gmail.com">
+          camilodiaz2860@gmail.com <span>↗</span>
+        </a>
+
+        <div class="social-links">
+          <a href="https://github.com/Cami-ng23" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="contact-shape shape-a"></div>
+      <div class="contact-shape shape-b"></div>
+      <div class="contact-shape shape-c"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>
+      © <span id="current-year"></span> Camilo Díaz
+    </span>
+
+    <a href="#inicio">Regresar ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
