@@ -10,6 +10,7 @@ menuButton?.addEventListener('click', () => {
   nav.classList.toggle('is-open', isOpen);
   document.body.classList.toggle('menu-open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
 });
 
 navLinks.forEach((link) => {
@@ -18,9 +19,13 @@ navLinks.forEach((link) => {
     nav?.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', 'Abrir menú');
   });
 });
 
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -29,4 +34,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add('is-visible'));
+}
