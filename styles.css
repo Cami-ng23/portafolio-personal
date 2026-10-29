@@ -360,3 +360,67 @@ body { line-height: 1.55; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Enlaces de contacto con iconos de Gmail y GitHub */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.contact-platform {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 145px;
+  padding: 14px 18px;
+  border: 1px solid rgba(32, 29, 26, .55);
+  color: var(--ink);
+  font: 12px var(--mono);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.contact-platform img {
+  display: block;
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.contact-platform span:nth-child(2) {
+  font-weight: 500;
+}
+
+.contact-platform .platform-arrow {
+  margin-left: auto;
+  font-size: 15px;
+  transition: transform .2s ease;
+}
+
+.contact-platform:hover {
+  background: rgba(244, 239, 230, .35);
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.contact-platform:hover .platform-arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 620px) {
+  .contact-links {
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .contact-platform {
+    min-width: 130px;
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+}
+
