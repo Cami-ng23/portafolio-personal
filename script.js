@@ -188,6 +188,8 @@ if (hasObserver) {
       frame = requestAnimationFrame(() => {
         el.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
         el.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
+        el.style.setProperty('--nx', ((px - 0.5) * 2).toFixed(3));
+        el.style.setProperty('--ny', ((py - 0.5) * 2).toFixed(3));
         if (max) {
           el.style.setProperty('--ry', `${((px - 0.5) * 2 * max).toFixed(2)}deg`);
           el.style.setProperty('--rx', `${((0.5 - py) * 2 * max).toFixed(2)}deg`);
@@ -199,7 +201,62 @@ if (hasObserver) {
       cancelAnimationFrame(frame);
       el.style.setProperty('--rx', '0deg');
       el.style.setProperty('--ry', '0deg');
+      el.style.setProperty('--nx', 0);
+      el.style.setProperty('--ny', 0);
     });
+  });
+
+  /* Letras interactivas: cada letra reacciona al pasar el cursor */
+  const splitLetters = (root) => {
+    root.setAttribute('aria-label', root.textContent.replace(/\s+/g, ' ').trim());
+
+    const walk = (node) => {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const text = child.textContent.replace(/\s+/g, ' ');
+          if (!text.trim()) { child.textContent = text ? ' ' : ''; return; }
+
+          const fragment = document.createDocumentFragment();
+          text.split(/( )/).forEach((part) => {
+            if (part === ' ') { fragment.append(' '); return; }
+            if (!part) return;
+            const word = document.createElement('span');
+            word.className = 'word';
+            word.setAttribute('aria-hidden', 'true');
+            Array.from(part).forEach((letter) => {
+              const char = document.createElement('span');
+              char.className = 'char';
+              char.textContent = letter;
+              word.append(char);
+            });
+            fragment.append(word);
+          });
+          child.replaceWith(fragment);
+        } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') {
+          walk(child);
+        }
+      });
+    };
+    walk(root);
+  };
+
+  $$('.hero h1, .section-heading h2, .contact-inner h2, .project-info h3, .stack-card h3, .principle h3, .process-step h3')
+    .forEach(splitLetters);
+
+  // Cuando termina la entrada del título se quita la máscara, para que las letras puedan saltar
+  const heroTitle = $('.hero h1');
+  $$('.line > span', heroTitle).pop()?.addEventListener('animationend', () => heroTitle.classList.add('is-settled'), { once: true });
+
+  /* Efecto magnético: botones y enlaces siguen un poco al cursor */
+  $$('.button, .nav-cta, .project-link, .contact-platform').forEach((el) => {
+    el.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      const rect = el.getBoundingClientRect();
+      const dx = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
+      const dy = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
+      el.style.translate = `${(dx * 10).toFixed(1)}px ${(dy * 8).toFixed(1)}px`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.translate = ''; });
   });
 
   /* Paralaje leve de los elementos decorativos del hero */
